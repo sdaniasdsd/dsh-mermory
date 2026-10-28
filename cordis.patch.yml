@@ -1,4 +1,6 @@
 - insert:
+    - id: dsh-mermory-personality
+      name: dsh-mermory/personality
     - id: dsh-mermory-budget
       name: dsh-mermory/budget
       config:

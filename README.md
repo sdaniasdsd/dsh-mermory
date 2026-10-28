@@ -16,7 +16,9 @@ https://github.com/sdaniasdsd/dsh-mermory
 dsh plugin --profile web add 'github:sdaniasdsd/dsh-mermory'
 ```
 
-Desktop 版将 `web` 换成 `desktop`。如启用后工具尚未出现，重启 DSH 或新建会话。此包声明 `dsh.bundle`，会注册 `mcp__huozhong_memory__recall_research_memory` 工具和记忆预算插件；模型按问题和工具描述决定是否调用。
+Desktop 版将 `web` 换成 `desktop`。启用插件后，新建会话，点击输入框上方的“标准模式”，选择“人格模式”即可启动。人格模式沿用官方标准模式的工具，并提示模型在需要时召回记忆；模型仍会自行决定是否调用。若模式或工具未出现，请重启 DSH。
+
+已有旧版用户请在插件页面卸载旧版，再用上方网址重新安装并启用，然后新建会话。该模式适配并测试于官方 DSH 0.2.1-rc.3；它读取该版本标准模式的运行时定义，未来 DSH 插件 API 变化可能需要更新。
 
 ## 包含什么
 

@@ -1,12 +1,32 @@
 {
   "name": "dsh-mermory",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "DSH 选择性结构记忆：加权关联召回、来源与上下文预算",
   "type": "module",
   "license": "UNLICENSED",
-  "repository": {"type":"git", "url":"https://github.com/sdaniasdsd/dsh-mermory.git"},
-  "exports": {"./budget":"./src/budget.mjs", "./mcp":"./src/mcp.cjs", "./package.json":"./package.json"},
-  "files": ["src", "data", "third-party", "cordis.patch.yml", "README.md"],
-  "dsh": {"bundle": {"patch": "./cordis.patch.yml"}},
-  "scripts": {"test": "node --test test/*.test.cjs"}
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sdaniasdsd/dsh-mermory.git"
+  },
+  "exports": {
+    "./budget": "./src/budget.mjs",
+    "./mcp": "./src/mcp.cjs",
+    "./package.json": "./package.json",
+    "./personality": "./src/personality.mjs"
+  },
+  "files": [
+    "src",
+    "data",
+    "third-party",
+    "cordis.patch.yml",
+    "README.md"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "scripts": {
+    "test": "node --test test/*.test.cjs"
+  }
 }
