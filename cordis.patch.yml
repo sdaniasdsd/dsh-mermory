@@ -1,0 +1,19 @@
+- insert:
+    - id: dsh-mermory-budget
+      name: dsh-mermory/budget
+      config:
+        contextTokens: !!js Number(process.env.DSH_MEMORY_CONTEXT_TOKENS || 32768)
+    - id: dsh-mermory-mcp
+      name: '@deepseek-ai/dsh-mcp-client'
+      config:
+        serverName: huozhong_memory
+        transport: stdio
+        command: !!js process.execPath
+        args:
+          - !!js process.getBuiltinModule('node:module').createRequire(baseUrl).resolve('dsh-mermory/mcp')
+        env:
+          ELECTRON_RUN_AS_NODE: '1'
+          DSH_MEMORY_MANIFESTS: !!js process.env.DSH_MEMORY_MANIFESTS || ''
+          DSH_MEMORY_CONTEXT_TOKENS: !!js process.env.DSH_MEMORY_CONTEXT_TOKENS || '32768'
+          DSH_MEMORY_USED_TOKENS: !!js process.env.DSH_MEMORY_USED_TOKENS || '0'
+          DSH_MEMORY_OUTPUT_TOKENS: !!js process.env.DSH_MEMORY_OUTPUT_TOKENS || '0'

@@ -1,0 +1,92 @@
+[
+  {
+    "id": "primitive/bucket-with-inflow-outflow",
+    "name": "一边进水一边放水的桶",
+    "de_domained": "用一个存量缓冲两个不同步的流量。缓冲越大，输出波动越小，\n但建立缓冲本身有代价，且缓冲介质自身的损耗会限制其有效性。",
+    "signature": {
+      "source_controllability": "low",
+      "output_requirement": "smooth",
+      "flow_direction": "unidirectional",
+      "storage_medium": "potential",
+      "feedback_available": true,
+      "time_scale": "1ms-100ms",
+      "failure_cost": "recoverable",
+      "critical_region": "at-empty-state"
+    }
+  },
+  {
+    "id": "primitive/coach-watching-and-correcting",
+    "name": "教练盯着你并随时纠正",
+    "de_domained": "用一个观测-比较-修正的回路，强迫一个量跟随一个参考。\n回路的跟踪能力受限于三件事：观测延迟、执行带宽、\n以及延迟与增益的乘积（超过临界值系统自激振荡）。",
+    "signature": {
+      "source_controllability": "high",
+      "output_requirement": "track-reference",
+      "flow_direction": "unidirectional",
+      "storage_medium": "none",
+      "feedback_available": true,
+      "time_scale": "10us-10ms",
+      "failure_cost": "recoverable",
+      "critical_region": "at-loop-limit"
+    }
+  },
+  {
+    "id": "primitive/fill-empty-container-fast",
+    "name": "快速灌一个空容器",
+    "de_domained": "把一个空的存量在有限时间内填到工作水位。\n存量为空时，源侧看到的等效阻抗最低，\n因此冲击最大出现在过程起点而非终点，\n且「填得快」与「冲击小」是一对不可同时满足的目标。",
+    "signature": {
+      "source_controllability": "partial",
+      "output_requirement": "reach-target-safely",
+      "flow_direction": "unidirectional",
+      "storage_medium": "potential",
+      "feedback_available": false,
+      "failure_cost": "hardware-damage",
+      "time_scale": "10ms-1s",
+      "critical_region": "at-empty-state"
+    }
+  },
+  {
+    "id": "primitive/save-first-then-overspend",
+    "name": "先存钱再超支",
+    "de_domained": "用时间换幅度：在低强度侧持续积累，在高强度侧短时释放，\n使输出强度超过输入强度。代价是积累环节的应力与损耗随\n倍率上升，且倍率趋于无穷时积累时间趋于全部时间，\n释放窗口趋于零，实际不可达。",
+    "signature": {
+      "source_controllability": "partial",
+      "output_requirement": "exceed-source-level",
+      "flow_direction": "unidirectional",
+      "storage_medium": "kinetic",
+      "feedback_available": true,
+      "time_scale": "1us-100us",
+      "failure_cost": "recoverable",
+      "critical_region": "at-drive-limit"
+    }
+  },
+  {
+    "id": "primitive/suck-through-straw",
+    "name": "用吸管吸水",
+    "de_domained": "通过一条有阻力的通道从源侧取用某种量。\n取用速率由推动力与通道阻力决定，但通道内的存量具有惯性，\n且推动力存在物理上限，越限后通道失效而非线性退化。",
+    "signature": {
+      "source_controllability": "low",
+      "output_requirement": "on-demand",
+      "flow_direction": "unidirectional",
+      "storage_medium": "kinetic",
+      "feedback_available": true,
+      "time_scale": "0.1s-1s",
+      "failure_cost": "recoverable",
+      "critical_region": "at-drive-limit"
+    }
+  },
+  {
+    "id": "primitive/two-hoses-one-bucket",
+    "name": "两根水管灌同一个桶",
+    "de_domained": "两个独立源向同一个负载供能。分配由源阻抗与源电动势之差\n被动决定，而非设计者指定；在两源接近平衡处分配对扰动\n高度敏感；若不加隔离，低电动势源会承受反向流动。",
+    "signature": {
+      "source_controllability": "low",
+      "output_requirement": "share-load",
+      "flow_direction": "bidirectional-risk",
+      "storage_medium": "potential",
+      "feedback_available": true,
+      "time_scale": "1ms-1s",
+      "failure_cost": "hardware-damage",
+      "critical_region": "at-balance-point"
+    }
+  }
+]

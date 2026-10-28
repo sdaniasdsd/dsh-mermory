@@ -1,0 +1,16 @@
+[
+  {
+    "id": "claim/bigger-bucket-has-floor",
+    "repairs_truncation": [
+      "truncation/ideal-storage",
+      "truncation/single-branch"
+    ]
+  },
+  {
+    "id": "claim/straw-thickness-inverts-smoothing",
+    "repairs_truncation": [
+      "truncation/no-inertia",
+      "truncation/linear-resistance"
+    ]
+  }
+]

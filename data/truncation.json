@@ -1,0 +1,59 @@
+[
+  {
+    "id": "truncation/ideal-storage",
+    "applies_to": [
+      "primitive/bucket-with-inflow-outflow"
+    ]
+  },
+  {
+    "id": "truncation/instant-observation",
+    "applies_to": [
+      "primitive/coach-watching-and-correcting"
+    ]
+  },
+  {
+    "id": "truncation/linear-resistance",
+    "applies_to": [
+      "primitive/suck-through-straw"
+    ]
+  },
+  {
+    "id": "truncation/lossless-conversion",
+    "applies_to": [
+      "primitive/save-first-then-overspend"
+    ]
+  },
+  {
+    "id": "truncation/no-inertia",
+    "applies_to": [
+      "primitive/suck-through-straw",
+      "primitive/bucket-with-inflow-outflow"
+    ]
+  },
+  {
+    "id": "truncation/single-branch",
+    "applies_to": [
+      "primitive/bucket-with-inflow-outflow",
+      "primitive/suck-through-straw"
+    ]
+  },
+  {
+    "id": "truncation/sources-are-independent",
+    "applies_to": [
+      "primitive/two-hoses-one-bucket"
+    ]
+  },
+  {
+    "id": "truncation/steady-state-only",
+    "applies_to": [
+      "primitive/bucket-with-inflow-outflow",
+      "primitive/suck-through-straw"
+    ]
+  },
+  {
+    "id": "truncation/unbounded-drive",
+    "applies_to": [
+      "primitive/suck-through-straw"
+    ]
+  }
+]
