@@ -10,13 +10,13 @@
 https://github.com/sdaniasdsd/dsh-mermory
 ```
 
-如果安装界面要求包地址格式，使用 `github:sdaniasdsd/dsh-mermory`。CLI 安装到 Web 配置的示例：
+安装完成后选择“立即启用”（或打开插件开关）。如果安装界面要求包地址格式，使用 `github:sdaniasdsd/dsh-mermory`。CLI 安装到 Web 配置的示例：
 
 ```powershell
 dsh plugin --profile web add 'github:sdaniasdsd/dsh-mermory'
 ```
 
-Desktop 版将 `web` 换成 `desktop`。安装后重启 DSH。此包声明 `dsh.bundle`，会注册 `mcp__huozhong_memory__recall_research_memory` 工具和记忆预算插件；模型按问题和工具描述决定是否调用。
+Desktop 版将 `web` 换成 `desktop`。如启用后工具尚未出现，重启 DSH 或新建会话。此包声明 `dsh.bundle`，会注册 `mcp__huozhong_memory__recall_research_memory` 工具和记忆预算插件；模型按问题和工具描述决定是否调用。
 
 ## 包含什么
 
